@@ -1,5 +1,6 @@
 import { View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import  Ionicons  from '@expo/vector-icons/Ionicons'
+import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../App'
 import { useNavigation } from '@react-navigation/native'
@@ -24,8 +25,16 @@ const Paywall = () => {
        <TouchableOpacity onPress={() => navigation.goBack()} className='absolute top-0 right-0 p-5'>
             <Ionicons name="close-circle-sharp" size = {32} color="#E5962D" />
        </TouchableOpacity>
+       {/* Logo */}
+       <View className='items-center'>
+           <MaterialCommunityIcons 
+            name="trophy-award"
+            size={150}
+            color="#E5962D"
+           />
+       </View>
        {/* Content */}
-       <View>
+       <View className='space-y-5 px-10 py-5'>
          <View className='flex-row space-x-10 items-center'>
             <Ionicons name = 'key' size = {32} color={'#E5962D'} />
             <View className='flex-1'>
@@ -75,6 +84,9 @@ const Paywall = () => {
 
          </View> 
        </View>
+       {/* Monthly Subscribe */}
+       {/* Annual Subscribe */}
+       {/* Restore Purchases */}
     </ScrollView>
   )
 }
