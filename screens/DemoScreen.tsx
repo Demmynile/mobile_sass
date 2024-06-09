@@ -3,6 +3,7 @@ import { RootStackParamList } from '../App'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { useNavigation } from '@react-navigation/native'
 import {Ionicons} from '@expo/vector-icons'
+
 export type NavigationProp = NativeStackNavigationProp<
 RootStackParamList,
 'Home'

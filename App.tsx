@@ -1,8 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import HomeScreen from './screens/HomeScreen';
 import DemoScreen from './screens/DemoScreen';
+import Paywall from './screens/Paywall';
 
 
 export type RootStackParamList = {
@@ -26,6 +27,12 @@ export default function App() {
           headerShown : false
         }}
          name = 'Demo' component={DemoScreen} />
+         <Stack.Screen
+         options = {{
+          headerShown : false,
+          presentation : 'modal'
+        }}
+         name = 'Paywall' component={Paywall} />
      </Stack.Navigator>
     </NavigationContainer>
   );

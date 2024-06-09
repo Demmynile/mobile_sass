@@ -3,13 +3,23 @@ import React from 'react'
 import gymImage from '../assets/gym_company.jpeg'
 import { Ionicons } from '@expo/vector-icons'
 import ActionRow from '../components/ActionRow'
+import { RootStackParamList } from '../App'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { useNavigation } from '@react-navigation/native'
 
+export type NavigationProp = NativeStackNavigationProp<
+RootStackParamList,
+'Home'
+>
 const HomeScreen = () => {
+
+
+const navigation = useNavigation<NavigationProp>()
   return (
     <SafeAreaView className='flex-1 bg-gray-100 relative'>
       {/* <Text >I am the Homescreen</Text> */}
       <ScrollView>
-        <TouchableOpacity className='absolute z-50 top-1 right-2 mb-5 items-center '>
+        <TouchableOpacity onPress = {() => navigation.navigate('Paywall')} className='absolute z-50 top-1 right-2 mb-5 items-center '>
             <Ionicons name = "person-circle" size={24} color="#E5962D" />
             <Text className='text-center text-[#E5962D]'>UPGRADE</Text>
         </TouchableOpacity>
